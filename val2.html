@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input id="text" type="text"name="" >
+<input id="password"type="text">
+<button onclick="Myfunction()">submit</button>
+<script type="text/javascript">
+	function Myfunction(){
+		var text2=document.getElementById("text");
+		var text=document.getElementById("text").value;
+		var pattern="^k";
+		var r=RegExp(pattern);
+		if(r.test(text)){
+			text2.style.border="5px solid pink";
+		}
+		else{
+			text2.style.border="5px solid red";
+
+		}
+		var pattern="^[0-9]{5}$";
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Validation</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr>
+				<td>UserName</td>
+				<td>:</td>
+				<td><input type="text" id="Uname"></td>
+			</tr>
+
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td><input type="text" id="Pw"></td>
+			</tr>
+
+			<tr>
+				<td>Confirm Password</td>
+				<td>:</td>
+				<td><input type="text" id="CPw"></td>
+			</tr>
+
+			<tr>
+				<td>Date OF Birth</td>
+				<td>:</td>
+				<td><input type="text" id="Dob"></td>
+			</tr>
+
+			<tr>
+				<td>EnrollmentNo</td>
+				<td>:</td>
+				<td><input type="text" id="Eno"></td>
+			</tr>
+
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td><input type="text" id="Email"></td>
+			</tr>
+
+			<tr>
+				<td colspan="3" align="center"><input type="button" onclick="Validate()" value="submit"></td>
+			</tr>
+		
+	</form>
+
+	<script type="text/javascript">
+		function Validate()
+		{
+			txt=document.getElementById('Uname');
+			if(txt.value.length<8)
+			{
+				txt.style.border="2px solid red";
+			}
+			else
+			{
+				txt.style.border="2px solid black";
+			}
+
+			txt=document.getElementById('Pw')
+			var pattern1="[0-9]";
+			var r1=new RegExp(pattern1);
+
+			var pattern2="[~!@#$%^&*()_]";
+			var r2=new RegExp(pattern2);
+
+			if(r1.test(txt.value) && r2.test(txt.value) && txt.value.length>7 && txt.value.length<13)
+			{
+				txt.style.border="2px solid green";
+			}
+			else{
+				txt.style.border="2px solid red";
+			}
+		}
+	</script>
+
+</body>
+</html>

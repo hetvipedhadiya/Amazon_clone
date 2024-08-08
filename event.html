@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"><span id="d1"></span>
+    <script >
+        txt=document.getElementById("txt");
+        txt.addEventListener("keyup",(event)=>{
+            if(event.key=='a'||event.key=='e'||event.key=='i'||event.key=='o'||event.key=='u'){
+                document.getElementById("d1").innerHTML="vowel pressed";
+            }else{
+                document.getElementById("d1").innerHTML="consonent pressed";
+            }
+        })
+
+        txt.addEventListener("keyup",(event)=>{
+            r=Math.ceil(Math.random()*130);
+            g=Math.ceil(Math.random()*130);
+            b=Math.ceil(Math.random()*130);
+            document.body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+            document.getElementById("d1").innerHTML += "RGB= "+r+","+g+","+b;
+        
+        })
+    </script>
+</body>
+</html>

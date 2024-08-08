@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ARMSTRONG NO.</title>
+</head>
+<body>
+	<script type="text/javascript">
+		n=Number.parseInt(prompt("ENTER NO.= "));
+		num1=n,num2=n;
+		count=0,digit=0,sum=0,power=1;
+
+		/*ALTERNATE
+			n=prompt(---);   input is string
+			l=n.length;
+
+			n=Number.parseInt(n); to convert into number from string 
+		*/
+
+		/*FOLLOWING while() is not required*/
+
+		while(n!=0)
+		{
+			count++;
+			n=Number.parseInt(n/10);
+		}
+
+		while(num1!=0)
+		{
+			digit=num1%10;
+			
+			for(i=1;i<=count /* or l*/;i++)
+			{
+				power*=digit;
+			}
+
+			sum+=power;
+			power=1;
+			num1=Number.parseInt(num1/10);
+		}
+
+		if(num2==sum)
+		{
+			document.write("ARMSTRONG NO.");
+			console.log("ARMSTRONG");
+		}
+
+		else
+		{
+			document.write("NOT ARMSTRONG");
+			console.log("NOT ARMSTRONG");
+		}
+	</script>
+</body>
+</html>

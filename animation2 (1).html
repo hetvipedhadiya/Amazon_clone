@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.div1{
+			width: 100px;
+			height:100px;
+			animation-duration: 2s;
+			animation-name: myanimation;
+			position: relative;
+			animation-iteration-count: infinite;
+		}
+		@keyframes myanimation{
+			0%{
+				background-color: red;
+				left: 0px;
+				top: 0px;
+			}
+			25%{
+				background-color: yellow;
+				left: 500px;
+				top: 0px;
+			}
+			50%{
+				background-color: yellow;
+				left: 500px;
+				top: 500px;
+			}
+			75%{
+				background-color: yellow;
+				left: 0px;
+				top: 500px;
+			}
+			100%{
+				background-color: yellow;
+				left: 0px;
+				top: 0px;
+			}
+			
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+<div class="div1"></div>
+</body>
+</html>

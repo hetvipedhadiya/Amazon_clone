@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#img{
+			width: 200px;
+			height: 150px;
+			position: absolute;
+			left: 500px;
+			top: 100px;
+		}
+		#fly{
+			position: absolute;
+			width: 70px;
+			height: 70px;
+		}
+	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body onload="chackPosition()">
+	
+	<input type="button" value="move left" onclick="startLeft()">
+	<input type="button" value="move right" onclick="startRight()">
+	<input type="button" value="move top" onclick="startTop()">
+	<input type="button" value="movebottom" onclick="startBottom()">
+	<img src="snakel.png" id="img"/>
+	<img src="apple.avif" id="fly">
+<script type="text/javascript">
+	leftPos=500;
+	rightInt=0;
+	leftInt=0;
+
+	topPos=100;
+	topInt=0;
+	bottomInt=0;
+	function chackPosition()
+	{
+		leftApple=Math.ceil(Math.random()*1500)+100;
+		topApple=Math.ceil(Math.random()*900)+100;
+		k=document.getElementById('fly');
+		k.style.left=leftApple+"px";
+		k.style.top=topApple+"px"
+	}
+
+	function moveLeft(){
+		leftPos--;
+		checkKhavayGyu();
+		if(leftPos<0)
+			leftPos=screen.availWidth;
+		i=document.getElementById('img');
+		i.src="snakel.png";
+		i.style.left=leftPos+"px";
+		
+	}
+	function moveRight(){
+		leftPos++;
+		checkKhavayGyu();
+		i=document.getElementById('img');
+		i.src="snaker.jpg";
+		i.style.left=leftPos+"px";
+		if(leftPos>screen.availWidth){
+			leftPos=0;
+		}
+		
+	}
+	function moveTop(){
+		topPos--;
+		checkKhavayGyu();
+		if(topPos<0)
+			topPos=screen.availHeight;
+		i=document.getElementById('img');
+		i.src="snaket.jpg";
+		i.style.top=topPos+"px";
+	}
+	function moveBottom(){
+		topPos++;
+		checkKhavayGyu();
+		i=document.getElementById('img');
+		i.src="snakeb.jpg";
+		i.style.top=topPos+"px";
+		if(topPos>screen.availHeight){
+			topPos=0;
+		}
+	}
+	function startLeft(){
+		clearInterval(rightInt);
+		clearInterval(leftInt);
+		clearInterval(topInt);
+		clearInterval(bottomInt);
+		leftInt=setInterval(moveLeft,1)
+	}
+	function startRight(){
+		clearInterval(rightInt);
+		clearInterval(leftInt);
+		clearInterval(topInt);
+		clearInterval(bottomInt);
+		rightInt=setInterval(moveRight,1);
+
+	}
+	function startTop(){
+		clearInterval(rightInt);
+		clearInterval(leftInt);
+		clearInterval(topInt);
+		clearInterval(bottomInt);
+		topInt=setInterval(moveTop,1)
+	}
+	function startBottom(){
+		clearInterval(rightInt);
+		clearInterval(leftInt);
+		clearInterval(topInt);
+		clearInterval(bottomInt);
+		bottomInt=setInterval(moveBottom,1)
+	}
+	function checkKhavayGyu(){
+		if(topApple==topPos && leftApple==leftPos){
+			document.write("<h1> khavay gyu</h1>");
+		}
+	}
+
+</script>
+</body>
+</html>
